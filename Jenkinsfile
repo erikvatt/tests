@@ -1,7 +1,9 @@
 #!/usr/bin/env groovy
 pipeline {
   agent any
-
+  when {
+    buildingTag()
+  }
   stages {
     stage("Clone") {
       steps {
